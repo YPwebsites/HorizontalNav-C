@@ -95,13 +95,13 @@ dl,
 address { 
 	margin-bottom : 15px; 
 	font-size : 12px; 
-	line-height: 18px;
+	line-height: 160%;
 	color: white;
 	}
-	
+/* add text styling to divs as Websplanet loves to wrap text in divs throughout the platform, just don't include a margin */
 div {
 	font-size : 12px; 
-	line-height: 18px;
+	line-height: 160%;
 	color: white;
 }
 
@@ -1113,14 +1113,15 @@ div.reviewBody {
 .reviewSubject h4 {
 	font-size: 20px !important;  /* match h4 styling; requires !important */
 }
-
+.ypreviews {margin-bottom:30px;}
 /* RSS widget styling --- rss feed widget styeling, typography is completely different */
 .rss-item-title a {
 	font: 20px; /* match h4 styling */
 	color: #2D71E6; /* match link color */
 }
-
-
+div.rss ul {
+    padding: 0;
+}
 div[type=rss_widget] > div.widget-body > div { /* match h3 styling; requires !important */
 	font: 28px/28px "Avenir Regular", Helvetica, Arial, sans-serif !important;
 	
@@ -1159,6 +1160,10 @@ label {
 .name-field { /* unifies width to other form elements */
 	width: 48% !important; /* default is 49% */
 	margin-right: 2% !important; /* defaut is 0 and has no space between inputs (first and last names) */
+}
+li.adress-block-field {
+	margin-right: 2%;
+	width: 48%;
 }
 
 /* Calculators */
@@ -1261,6 +1266,15 @@ div.unit-calc li.unit-menu ul.unit-type li a.active, div.unit-calc li.unit-menu 
 .big-clock {
   font-size: 30px !important;
 }
+/* Payment Method Fixes */
+ul.PaymentMethod_widget  label {display:none;}
+li.checkboxPaymentMethod {margin: 0px 10px 0px 0px !important;}
+
+/* Guestbook fixes */
+.diy-guestbook-form input, .diy-guestbook-form textarea {
+    clear: left;
+    float: left;
+}
 
 /* --------------- end Websplanet widget fixes --------------- */
 
@@ -1274,18 +1288,7 @@ div.horizontal div.vertical {
 		width: 100% !important;	
 	}
 }
-/*
-div.calloutBar img {
-	position: relative;
-	z-index: -5;
-	border: 5px solid #ffffff\9;
-	width: 95% !important\9;
-}
-div.calloutBar div.freetext-image {
-	-webkit-box-shadow: inset 0px 0px 0px 5px #ffffff;
-    box-shadow: inset 0px 0px 0px 5px #ffffff;
-}
-*/
+
 .flR {
 	float:right;
 	margin-left: 10px;
@@ -1310,6 +1313,9 @@ div.calloutBar div.freetext-image {
 .Events_item_title a:hover {
 	text-decoration: underline;
 }
+div.Events_item {
+	padding: 0;
+}
 #FAQ_category_list li a,
 #FAQ_category_list li a:visited {
     background-color: red; /* replace with theme color */
@@ -1319,7 +1325,7 @@ div.calloutBar div.freetext-image {
     height: auto;
     line-height: 40px;
     text-align: center;
-    width: 100%;
+    width: auto;
     z-index: 1001;
     color: #fff;
     border: none;
@@ -1339,7 +1345,10 @@ ul#FAQ_category_list span {
 div.jobs-desc p {
     padding: 10px;
 }
-
+div#jobs-module ul {
+    margin: 0;
+    padding: 0;
+}
 
 /* for sites with dark backgrounds, the job desciption text gets lost as it is inline styled to be a dark color by default  */
 div.jobs-desc {
@@ -1401,3 +1410,19 @@ ul#FAQ_category_list span p span {
 }
 
 /* --------------- end Websplanet module fixes --------------- */
+
+
+/* --------------- Default Site Callout Classes --------------- */
+div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+	width:45% !important;
+	float:left !important;
+}	
+	 
+@media screen and (max-width: 767px) {
+	div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+	div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+		width:auto !important;
+		float:left !important;
+	}
+}
