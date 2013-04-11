@@ -20,7 +20,7 @@ body {
 	font-size : 100%/1.4;
 	font-family:Verdana, Geneva, sans-serif;
 	}
-	body#mysite {
+	body {
 		position: relative;
 		z-index: -15;
 		}
@@ -261,14 +261,14 @@ div#wrapper-content {
 /* logo */
 
 #logo {
-	text-align:left;
 	padding: 55px 0px 20px;
 	}
-	
-#logo a, #logo a:hover {
+/* add logo font styling here */
+#logo a, #logo a:hover, #logo a div, #logo a:hover div {
+	text-align:left;
 	text-decoration:none;
 	color:#fff;
-	font: 48px/48px "Century Gothic", Verdana, Geneva, sans-serif;
+	font: 48px/48px Verdana, Geneva, sans-serif;
 	text-transform:uppercase;
 	color: #ef0202;
 	text-shadow: 2px 2px 3px #333;
