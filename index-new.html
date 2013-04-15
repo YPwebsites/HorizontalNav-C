@@ -59,7 +59,10 @@ $(document).ready(function(){
 
     <!-- begin mobile phone # -->
     <div id="m-phone-number">
-        <a href="tel:{PHONE}">{PHONE}</a>
+        <a href="tel:{PHONE}">
+        	<div class="tagline2"><!-- {Tagline_2} --> Call Now</div>
+            <div>{PHONE}</div>
+        </a>
     </div> 
     <!-- end mobile phone # -->
 
@@ -112,14 +115,14 @@ $(document).ready(function(){
         <header id="header" class="sk-container">
         	
             <div id="logo" class="sixteen columns">
-            	<!-- replace with {LOGO} in Websplanet -->
                 <a href="#">Company Name</a>
-            </div><!-- end #logo -->
+                <div class="slogan"><!-- {Tagline_1} -->Your Slogan Goes Here</div>
+            </div><!-- end logo -->
             
-            <div id="phone-number" class="sixteen columns">
-            	<!-- replace with {PHONE} in Websplanet; wrap with additional div for sliding door effect -->
-                404-555-5555
-            </div><!-- end #phone-number -->
+            <div id="phone-number" class="four columns">
+                <div class="tagline2"><!-- {Tagline_2} --> Call Now</div>
+                <div>404-555-5555</div>
+            </div><!-- end phone -->
         </header><!-- end header container --> 
     </div>  <!-- header wrapper end -->
     

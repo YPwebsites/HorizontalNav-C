@@ -273,20 +273,25 @@ div#wrapper-content {
 	color: #ef0202;
 	text-shadow: 2px 2px 3px #333;
 	}
+div.slogan {	
 	
-	
-
+}
 	
 /* Phone */
+/* positioning and box model styling go here */
 #phone-number {
+	padding:20px 0px;
+	}
+/* font styling goes here */
+#phone-number div {
 	font-size: 28px;
-	line-height: 21px;
+	line-height: 28px;
 	text-align:left;
 	text-transform:uppercase;
 	color:#fff;	
 	text-shadow: -1px -1px 0 #888, 2px 2px 3px #333;
+	-webkittext-shadow: -1px -1px 0 #888, 2px 2px 3px #333;
 	color: #555\9; /* color for IE8 and below (no text shadows) */
-	padding:20px 0px;
 	}
 /* mobile phone number */
 #m-phone-number {display:none;}	
@@ -346,11 +351,10 @@ div#wrapper-nav {
 	background: transparent url("gfx/NavBarBG.png") repeat-x top left;	
 	display: block;
 	position:relative;
-	height: 53px;
+	height: 44px;
 	border: solid #b5b6b6;
 	border-width: 1px 0; /* Top and bottom borders 1px, right and left borders 0 */
 	z-index: 300;
-	
 }
 @media screen and (max-width: 767px) {
 	div#wrapper-nav {
@@ -778,7 +782,10 @@ div.unit-calc li.unit-menu ul.unit-type li a:hover {
 
 /* Widgets */
 .widget-element {clear:left !important;}
-.widget-wrapper {}
+/* Column Gutter fix (per request from Zuzana) */
+.widget-wrapper {
+	margin: 10px 15px !important;
+}
 .widget-title {}
 .widget-body {}
 
@@ -1165,6 +1172,16 @@ li.adress-block-field {
 	margin-right: 2%;
 	width: 48%;
 }
+/* Contact Form */
+.contact-us label {
+	padding-bottom: 0px;
+}
+.contact-us li {
+	margin-bottom: 6px;
+}
+.contact-us input[type="submit"] {
+	margin-top: 0px;
+}
 
 /* Calculators */
 div.calc-input-container input[type=text] { /* remove styled margin-bottom, it pushes sub-labels down */
@@ -1268,7 +1285,14 @@ div.unit-calc li.unit-menu ul.unit-type li a.active, div.unit-calc li.unit-menu 
 }
 /* Payment Method Fixes */
 ul.PaymentMethod_widget  label {display:none;}
-li.checkboxPaymentMethod {margin: 0px 10px 0px 0px !important;}
+.PaymentMethod_widget .checkboxPaymentMethod span {
+	height: 40px;
+	width: 62px;
+}
+li.checkboxPaymentMethod {
+	margin: 0px !important;
+	width: 62px !important;
+}
 
 /* Guestbook fixes */
 .diy-guestbook-form input, .diy-guestbook-form textarea {
@@ -1417,6 +1441,7 @@ div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inne
 div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
 	width:45% !important;
 	float:left !important;
+	margin-right: 0 !important;
 }	
 	 
 @media screen and (max-width: 767px) {
@@ -1424,5 +1449,6 @@ div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inne
 	div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
 		width:auto !important;
 		float:left !important;
+		margin-right: 15px !important;
 	}
 }
