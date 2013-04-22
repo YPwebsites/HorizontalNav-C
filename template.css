@@ -1,17 +1,29 @@
-/*YP Horizontal Framework C v1 - Large Background Image
-	This template is used for layouts requring a large image in the background that resizes according to the size of the browser window 
-	MODULE STYLING  added 4/4/2013
+/*YP Horizontal Framework C v2.1 - Large Background Image
+	This template is used for layouts requring a large image in the background that resizes according to the size of the browser window
+	
+fixed calculators and typography 
+MODULE STYLING  added 4/4/2013
+Updated mobile menu 4/5/2013
+Markup-Cleanup 4/22/2013
 */ 
-
 
 @import url("gfx/wp-skeleton.css"); 
 
 header, footer, nav, section, article {display: block;}
 
 /* styles used by coverBG.js */
-img#coverBGimg { position: fixed !important; top: 0; left: 50%; z-index: -10;}
-.bgwidth { width: 100%; }
-.bgheight { height: 100%; }
+img#coverBGimg { 
+	position: fixed !important; 
+	top: 0; 
+	left: 50%; 
+	z-index: -10;
+}
+.bgwidth { 
+	width: 100%; 
+}
+.bgheight { 
+	height: 100%; 
+}
 /* end styles used by coverBG.js */
 
 body {
@@ -19,12 +31,9 @@ body {
 	color: #000;
 	font-size : 100%/1.4;
 	font-family:Verdana, Geneva, sans-serif;
-	}
-	body {
-		position: relative;
-		z-index: -15;
-		}
-		
+	position: relative;
+	z-index: -15;
+}		
 .skinBg { 
 	position: relative;
 	z-index: -9;
@@ -49,42 +58,30 @@ h2, h2 span, h2 font span,
 h3, h3 span, h3 font span, 
 h4, h4 span, h4 font span, 
 h5, h5 span, h5 font span, 
-h6, h6 span, h6 font span
- {
+h6, h6 span, h6 font span {
 	font-weight:normal;
 	margin-bottom : 15px;
 	line-height: 120%;
-	color: red;
-	}
-
+	color: red; /* replace with template color */
+}
 h1, h1 span, h1 font span { 
 	font-size : 34px; 
-	 
-	}
-
+}
 h2, h2 span, h2 font span{ 	
 	font-size : 30px; 
-	
-	}
-
+}
 h3, h3 span, h3 font span {	
 	font-size : 28px; 
-	
-	}
-
+}
 h4, h4 span, h4 font span { 	
 	font-size : 24px; 
-	 
-	}
-
+}
 h5, h5 span, h5 font span { 
 	font-size : 20px;  
-	
-	}
-
+}
 h6, h6 span, h6 font span { 
 	font-size : 20px; 
-	}
+}
 
 /* 3.TYPOGRAPHY */
 
@@ -101,122 +98,151 @@ address {
 /* add text styling to divs as Websplanet loves to wrap text in divs throughout the platform, just don't include a margin */
 div {
 	font-size : 12px; 
-	line-height: 160%;
 	color: white;
 }
 
+/* 3a. Websplanet widget typography 
+		   Contact Conor Kelly or Ian Glaze with questions.
+	*/
+	/* By default, websplanet widgets have css styling in other style sheets that will over-ride the styles applied to the html elements abover in "3.Typography". To correctly style the text in these widgets, re-define font color and additional styling using the tags below */
+	
+	div.reviewItem,
+	div.freetextarea, 
+	label, 
+	div.rss, 
+	div#ReviewsWidget, 
+	p.figcaption, 
+	div.opening-hours-widget-wrapper, 
+	div#opening-hours-comments, 
+	div#containingBlock, 
+	div.calc-input-container, 
+	div.calc-input-container span {
+		 color: white; /* replace with theme font color */
+	}
+	
+	/* If the theme font color is a lighter color (for themes with darker backgrounds) those colors will get lost when they are within Accordion, Tabs, or Spotlight widgets which, by default, have a white background. Define a theme "dark" text color for these areas using the classes below. */
+	
+	/* Controller Widgets (Accordions/Tabs/Spotlight Widgets) */
+	div.ui-widget-content div.freetextarea,
+	div.ui-widget-content div.reviewItem, 
+	div.ui-widget-content div.freetextarea, 
+	div.ui-widget-content label, 
+	div.ui-widget-content div.rss, 
+	div.ui-widget-content div#ReviewsWidget, 
+	div.ui-widget-content p.figcaption, 
+	div.ui-widget-content div.opening-hours-widget-wrapper, 
+	div.ui-widget-content div#opening-hours-comments, 
+	div.ui-widget-content div#containingBlock, 
+	div.ui-widget-content div.calc-input-container, 
+	div.ui-widget-content div.calc-input-container span,
+	div.diy-f-spot div.freetextarea,
+	div.diy-f-spot div.reviewItem, 
+	div.diy-f-spot div.freetextarea, 
+	div.diy-f-spot label, 
+	div.diy-f-spot div.rss, 
+	div.diy-f-spot div#ReviewsWidget, 
+	div.diy-f-spot p.figcaption, 
+	div.diy-f-spot div.opening-hours-widget-wrapper, 
+	div.diy-f-spot div#opening-hours-comments, 
+	div.diy-f-spot div#containingBlock, 
+	div.diy-f-spot div.calc-input-container, 
+	div.diy-f-spot div.calc-input-container span {
+		color: black; /* Replace with theme specific "dark" text color */
+	}
+p, span, div {
+	line-height:160%;
+}
 ul, 
 ol { 
 	margin : 0 0 1.5em 24px; 
 	padding-left : 24px; 
 	list-style-position: outside;
-	}
-
+}
 ul { 
 	list-style-type : disc; 
-	}
+}
 
 ol { 
 	list-style-type : decimal; 
-	}
-
+}
 ul li , 
 ol li  { 
 	margin : 0;
-	}
+}
 
 dl, 
 dd { 
 	margin-bottom : 1.5em;
-	}
+}
 
 dt { 
 	font-weight : normal; 
-	}
-
+}
 blockquote  { 
 	margin : 0 0 1.5em 24px; 
 	padding-left : 24px; 
 	border-left : 1px solid rgb(200,200,200); /* hex code can be used here too */
 	font-style : italic; 
-	}
-
+}
 blockquote:before, 
 blockquote:after, 
 q:before, 
 q:after {
 	content : '';
 	content : none; 
-	}
-
+}
 b, 
 strong	{ 
 	font-weight : bold; 
-	}
+}
 
 i, 
 em { 
 	font-style : italic; 
-	}
-
+}
 sup, 
 sub { 
 	position : relative;
 	font-size : 75%; 
 	line-height : 0; 
-	}
-
+}
 sup { 
 	top : -.5em; 
-	}
-
+}
 sub { 
 	bottom : -.25em; 
-	}
-
+}
 address { 
 	font-style : normal;
-	}
-
-
+}
 hr { 
 	border: solid #ddd; 
 	border-width: 1px 0 0; 
 	clear: both; 
 	margin: 10px 0 30px; 
 	height: 0; 
-	}
-
+}
 
 /* 4.LINKS */
-
 a, 
 a:visited {
 	outline : none;
-	color : #00F; 
+	color : #F00; 
 	text-decoration : underline;
-	}
- 
+}
 a:hover { 
 	outline : none;
 	color : rgb(40,40,40); /* hex code can be used here too */
 	text-decoration : underline; 
-	}
- 
+}
 a:active, 
 a:focus { 
 	outline : none;
 	color : rgb(0,0,0); /* hex code can be used here too */
 	text-decoration : underline;
-	}
-
+}
 
 /* layout */
-
-
-	
-	
-	
 p.m-logo {
 	text-align: center;
 	font-size:18px;
@@ -227,42 +253,46 @@ p.m-logo {
 	margin:0px;
 	line-height:normal;
 	width:auto;
-	}	
-	
-
+}	
 #wrapper-header, #wrapper-content, #wrapper-footer, #wrapper-copyright { 
 	width:100%;
 	 position:relative;
 	 z-index: 5;
  }
- 
+#wrapper-header { }
+#wrapper-content { } 
 div#wrapper-content {
-    background-color: rgba(0,0,0,0.65);
-	background: transparent url("gfx/wrapperContentBG.png") top left repeat\9;
+	background: transparent url("gfx/wrapperContentBG.png") top left repeat;
 }
-
- 
 #wrapper-footer {
-	background: transparent url("gfx/modNavBG.jpg") top left repeat;
-	} 
-
+	background: #a80000; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMiUiIHN0b3AtY29sb3I9IiNhODAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM2ZjAyMDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI4OCUiIHN0b3AtY29sb3I9IiNhODAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #a80000 12%, #6f0202 50%, #a80000 88%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(12%,#a80000), color-stop(50%,#6f0202), color-stop(88%,#a80000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a80000 12%,#6f0202 50%,#a80000 88%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a80000 12%,#6f0202 50%,#a80000 88%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a80000 12%,#6f0202 50%,#a80000 88%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a80000 12%,#6f0202 50%,#a80000 88%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a80000', endColorstr='#a80000',GradientType=0 ); /* IE6-8 */
+} 
 #wrapper-copyright {
 	display:inline-block;
 	padding: 10px 0px;
 	background: transparent url("gfx/copyrightBG.jpg") top left repeat;
-	}
-
+}
 #header {
  	min-height: 300px;
 }
-
-#content {padding:15px 0px; min-height:100px;}
+#content {
+	padding:15px 0px; 
+	min-height:100px;
+}
 
 /* logo */
-
 #logo {
 	padding: 55px 0px 20px;
-	}
+}
 /* add logo font styling here */
 #logo a, #logo a:hover, #logo a div, #logo a:hover div {
 	text-align:left;
@@ -272,79 +302,73 @@ div#wrapper-content {
 	text-transform:uppercase;
 	color: #ef0202;
 	text-shadow: 2px 2px 3px #333;
-	}
-div.slogan {	
-	
 }
+div.slogan { }
 	
 /* Phone */
 /* positioning and box model styling go here */
 #phone-number {
-	padding:20px 0px;
-	}
+	text-align:left;
+	text-transform:uppercase;
+	color:#404040;	
+	padding: 10px 20px;
+	text-shadow: 1px 1px 0 #ffffff;
+	-webkit-text-shadow: 1px 1px 0 #ffffff;
+	clear: left;
+	display: inline-block;
+	width: auto;
+	border: 2px solid #EEEEEE;
+	background: #eeeeee; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiOGI4YjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #eeeeee 0%, #b8b8b8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#b8b8b8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#b8b8b8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 0%,#b8b8b8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 0%,#b8b8b8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 0%,#b8b8b8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#b8b8b8',GradientType=0 ); /* IE6-8 */
+}
 /* font styling goes here */
 #phone-number div {
 	font-size: 28px;
 	line-height: 28px;
 	text-align:left;
 	text-transform:uppercase;
-	color:#fff;	
-	text-shadow: -1px -1px 0 #888, 2px 2px 3px #333;
-	-webkittext-shadow: -1px -1px 0 #888, 2px 2px 3px #333;
-	color: #555\9; /* color for IE8 and below (no text shadows) */
-	}
+	color:#404040;	
+}
 /* mobile phone number */
-#m-phone-number {display:none;}	
-
-/* header image */
-/* This template does not use the header-image dynamic tag. */
-/*#header-image-container {margin-top: 10px; margin-bottom: 10px; position:relative;}
-
-#header-image-wrapper-1 {}  WP wraps #siteMainDynHeaderImage1 with #header-image-wrapper-1 by defult but removes it once the image is replaced 
-
-img#siteMainDynHeaderImage1 { }*/
-
-
-/* Header media queries */
-
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {
-	
-}
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-	
-}
+#m-phone-number {
+	display:none;
+}	
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-	#phone-number { text-align:center;}
-	#logo { text-align:center;}
+	#phone-number { 
+		text-align:center;
+	}
+	#logo { 
+		text-align:center;
+	}
 }
-
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {	
 
 }
-
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) { 
 	#siteMainDynLogo /*this is for the mobile logo image*/ {
 		max-width:300px;
 		height:auto;		
 	}
-	
 }	
 
-
 /* footer */
-
-#footer-area {padding:10px 0px;}
-
+#footer-area {
+	padding:10px 0px;
+}
 
 /* 5.NAVIGATION/MENU */
-
 /* Feel free to change up this area as you see fit in order
 to best suit your design. */
 div#wrapper-nav {
@@ -366,59 +390,51 @@ div#wrapper-nav {
 	#logo {
 		padding-top: 20px;
 	}
-	#phone-number {
-		padding: 0;	
-	}
+	#phone-number { }
 }
 
-#menu {
-
-	}
-
+#menu { }
 ul#nav {
 	margin: 0;
 	padding: 0;
 	width:auto;
 	border-left: 1px solid #fff;
 	border-right: 1px solid #c7c8c8;
-	}
+}
+/* start first level nav items */
 	ul#nav li {
 		float: left;
 		padding: 0;
 		list-style: none;
 		list-style-image: none;
-		
 		padding: 0px;
-		
-		}
-		ul#nav li.last {
-			}
-		ul#nav li.first {
-			}
-		ul#nav li a {
-			font-size: 14px;
-			text-decoration: none;
-			line-height:43px; /* line height is better than top and bottom padding */
-			display: block;
-			text-align: left;
-			padding: 0px 30px;
-			white-space: nowrap;
-			text-transform: uppercase;
-			color: #731313;
-			background: transparent url("gfx/navItemBG.jpg") top left repeat-x;
-			border-left: 1px solid #c7c8c8;
-		    border-right: 1px solid #fff;
-			margin: 1px 0;
-			}
-		/* yes, you can combine the bottom two styles if you would like or need to */	
-		ul#nav > li.current > a,
-		ul#nav > li > a:hover {
-		    color: #fff;
-			background: transparent url("gfx/navCurrentItemBG.jpg") top left repeat-x;
-			}
-		 
-			
-		/* second level dropdown */	
+	}
+	ul#nav li.last { }
+	ul#nav li.first { }
+	ul#nav li a {
+		font-size: 14px;
+		text-decoration: none;
+		line-height:43px; /* line height is better than top and bottom padding */
+		display: block;
+		text-align: left;
+		padding: 0px 20px;
+		white-space: nowrap;
+		text-transform: uppercase;
+		color: #731313;
+		background: transparent url("gfx/navItemBG.jpg") top left repeat-x;
+		border-left: 1px solid #c7c8c8;
+		border-right: 1px solid #fff;
+		margin: 1px 0;
+	}
+		/* yes, you can combine/seperate the bottom two styles if you would like or need to */	
+	ul#nav > li.current > a,
+	ul#nav > li > a:hover {
+		color: #fff;
+		background: transparent url("gfx/navCurrentItemBG.jpg") top left repeat-x;
+	}
+/* end first level nav items */		
+	
+/* start second level nav items */		 	
 		ul#nav li ul { /* second-level lists */
 			position: absolute;
 			width: 10em;
@@ -426,62 +442,79 @@ ul#nav {
 			margin:0px;
 			padding:0px;
 		}
-		
-		ul#nav li ul li a, ul#nav li.current ul li a { /* second level dropdown buttons */
+		ul#nav li ul li a, 
+		ul#nav li.current ul li a { /* second level dropdown buttons */
 			width:200px;
-			
 			border-bottom: 1px solid #999;
 			line-height:30px;
 			color:#731313;
 			margin: 0;
-			}
-		
-		ul#nav li ul li a:hover, ul#nav li.current ul li a:hover { /* second level dropdown button hover state */	
+		}
+		ul#nav li ul li a:hover, 
+		ul#nav li.current ul li a:hover { /* second level dropdown button hover state */	
 			border-bottom: 1px solid #900;
 			color:#fff;
 			background: transparent url("gfx/navCurrentItemBG.jpg") top left repeat-x;
-			}
+		}
+/* first and lasts in drop down */
+		ul#nav li ul li.first a, 
+		ul#nav li.current ul li.first a { }
+		ul#nav li ul li.last a, 
+		ul#nav li.current ul li.last a { }
+/* end second level nav items */
 		
-						ul#nav li ul li ul li a, ul#nav li.current ul li ul li a { /* third level dropdown buttons */
-							width:200px;
-							
-							border-bottom: 1px solid #999;
-							line-height:30px;
-							color:#731313;
-							}
+/* start third level nav items */	
+			ul#nav li ul li ul { /* third-and-above-level lists */
+				margin: -1em 0 0 200px;
+			}	
+			ul#nav li ul li ul li a, 
+			ul#nav li.current ul li ul li a { /* third level dropdown buttons */
+				width:200px;
+				border-bottom: 1px solid #999;
+				line-height:30px;
+				color:#731313;
+			}
 						
-						ul#nav li ul li ul li a:hover, ul#nav li.current ul li ul li a:hover { /* third level dropdown button hover state */						
-							border-bottom: 1px solid #900;
-							color:#fff;
-							background: transparent url("gfx/navCurrentItemBG.jpg") top left repeat-x;
-							}
-		 
-		ul#nav li ul li ul { /* third-and-above-level lists */
-			margin: -1em 0 0 200px;
-		}
-		 
-		ul#nav li:hover ul li ul, ul#nav li:hover ul li ul li ul, ul#nav li.sfhover ul li ul, ul#nav li.sfhover ul li ul li ul {
-			left: -999em;
-		}
-		 
-		ul#nav li:hover ul, ul#nav li ul li:hover ul, ul#nav li ul li ul li:hover ul, ul#nav li.sfhover ul, ul#nav li ul li.sfhover ul, ul#nav li ul li ul li.sfhover ul { /* lists nested under hovered list items */
-			left: auto;
-		}
-		ul#nav li ul:hover {
-			left: auto;	
-		}
+			ul#nav li ul li ul li a:hover, 
+			ul#nav li.current ul li ul li a:hover { /* third level dropdown button hover state */						
+				border-bottom: 1px solid #900;
+				color:#fff;
+				background: transparent url("gfx/navCurrentItemBG.jpg") top left repeat-x;
+			}
+/* first and lasts in drop down */
+			ul#nav li ul li ul li.first a, 
+			ul#nav li.current ul li ul li a { }
+			ul#nav li ul li ul li.last a, 
+			ul#nav li.current ul li ul li a { }
+/* end third level nav items */ 
 
-		#m-menu { display:none; }
-				 
+			ul#nav li:hover ul li ul, 
+			ul#nav li:hover ul li ul li ul, 
+			ul#nav li.sfhover ul li ul, 
+			ul#nav li.sfhover ul li ul li ul {
+				left: -999em;
+			}
+		 
+			ul#nav li:hover ul, 
+			ul#nav li ul li:hover ul, 
+			ul#nav li ul li ul li:hover ul, 
+			ul#nav li.sfhover ul, 
+			ul#nav li ul li.sfhover ul, 
+			ul#nav li ul li ul li.sfhover ul { /* lists nested under hovered list items */
+				left: auto;
+			}
+/* hide mobile elements by default */
+		#m-menu { display:none; }	 
 		#navTab {display:none;}
 
 /* Navigation  media queries */
 
 @media only screen and (max-width: 766px) {
-		 
-	  #menu { display:none; }
-	 
-	 a#navTab /* mobile menu open button */{
+	/* hide desktop elements in "mobile" view */ 
+	#menu { display:none; }
+	#wrapper-menu {display:none;}
+	
+	a#navTab /* mobile menu open button */{
 		display:block;
 		width:100%;
 		height:30px;
@@ -492,96 +525,85 @@ ul#nav {
 		background-repeat:no-repeat;
 		background-position:top center;
 		z-index:900;
-		}	
-				
-	a#navTab:hover {
-		} 
+	}			
+	a#navTab:hover { } 
 		
-	 a#navTab.active {
-		 background-position:bottom center;
-		 }
-	 			 
-	 #wrapper-menu {display:none;}
-	 		 
-	 #m-wrapper-menu {  
-		   display:inline-block;
-		   width:100%;
-		   text-align:center;
-		   background: -moz-linear-gradient( 		top, 		#a3a3a3 0%, 		#3b3b3b 50%, 		#242424 50%, 		#000000);
-			background: -webkit-gradient( 		linear, left top, left bottom, 		from(#a3a3a3), 		color-stop(0.50, #3b3b3b), 		color-stop(0.50, #242424), 		to(#000000));
-			-moz-box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-			-webkit-box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-			box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-		}	
-		 
-	  #m-menu {
-			height: auto;
-			overflow: visible;
-			padding: 0;
-			position: relative;
-			width: 100%;
-			z-index: 800;
-			display: block;
-			margin:0 auto;
-		}
-			
-	   #m-menu-content {
-			display: none; /* hides the menu */
-			margin-top:-3px;
-		}	
-				 	
-	  #m-menu ul#nav {
-			margin: 0;
-			padding: 0;
-			width:auto;
-			background-color:#CCC;
-			
-			box-shadow: 		0px 2px 4px rgba(000,000,000,0.5);
-		}
+	a#navTab.active {
+		background-position:bottom center;
+	}
+	 
+	#m-wrapper-menu {  
+		display:inline-block;
+		width:100%;
+		text-align:center;
+		background: -moz-linear-gradient( top, #a3a3a3 0%, #3b3b3b 50%, #242424 50%, #000000);
+		background: -webkit-gradient( linear, left top, left bottom, from(#a3a3a3), 		color-stop(0.50, #3b3b3b), color-stop(0.50, #242424), to(#000000));
+		-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+		-webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+		box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+	}	
+	#m-menu {
+		height: auto;
+		overflow: visible;
+		padding: 0;
+		position: relative;
+		width: 100%;
+		z-index: 800;
+		display: block;
+		margin:0 auto;
+	}	
+	 #m-menu-content {
+		display: none; /* hides the menu */
+		margin-top:-3px;
+	}				 	
+	#m-menu ul#nav {
+		margin: 0;
+		padding: 0;
+		width:auto;
+		background-color:#CCC;
+		box-shadow: 0px 2px 4px rgba(000,000,000,0.5);
+	}
+/* start first level nav items */		
+	#m-menu ul#nav li {
+		float: none;
+		padding: 0;
+		list-style: none;
+		list-style-image: none;	
+	}
+	#m-menu ul#nav li.last {
+		border-left: 0px;
+		border-right: 0px;
+	}
+	#m-menu ul#nav li.first {
+		border-left: 0px;
+		border-right: 0px;
+	}	
+	#m-menu ul#nav li a {
+		font-size: 14px;
+		text-decoration: none;
+		line-height:35px; /* line height is better than top and bottom padding */
+		display: block;
+		text-align: left;
+		padding: 0px 15px;
+		white-space: nowrap;
+		text-transform: uppercase;
+		color: #666;
+		border-bottom: 1px solid #b7b7b7;
+		border-top: 1px solid #dddddd;
+		border-left: 0px;
+		border-right: 0px;
+	}
 		
-	  #m-menu ul#nav li {
-			float: none;
-			padding: 0;
-			list-style: none;
-			list-style-image: none;	
+	/* yes, you can combine the bottom two styles if you would like or need to */	
+	#m-menu ul#nav li.current a {
+		color: #fff;
 		}
-		
-		#m-menu ul#nav li.last {
-			border-left: 0px;
-			border-right: 0px;
-			}
-			
-		#m-menu ul#nav li.first {
-			border-left: 0px;
-			border-right: 0px;
-			}
-			
-		#m-menu ul#nav li a {
-			font-size: 14px;
-			text-decoration: none;
-			line-height:35px; /* line height is better than top and bottom padding */
-			display: block;
-			text-align: left;
-			padding: 0px 15px;
-			white-space: nowrap;
-			text-transform: uppercase;
-			color: #666;
-			border-bottom: 1px solid #b7b7b7;
-			border-top: 1px solid #dddddd;
-			border-left: 0px;
-			border-right: 0px;
-			}
-			
-		/* yes, you can combine the bottom two styles if you would like or need to */	
-		#m-menu ul#nav li.current a {
-		    color: #000;
-			}
-			
-		#m-menu ul#nav li a:hover {
-			color: #000;
-			}
-			
-		/* second level dropdown */	
+	#m-menu ul#nav li a:hover {
+		color: #fff;
+		}
+/* end first level nav items */		
+
+/* start second level nav items */
 		#m-menu ul#nav li ul { /* second-level lists */
 			position: relative;
 			display:block;
@@ -590,8 +612,8 @@ ul#nav {
 			padding:0px;
 			left:0px;
 		}
-		
-		#m-menu ul#nav li ul li a, #m-menu ul#nav li.current ul li a { /* second level dropdown buttons */
+		#m-menu ul#nav li ul li a, 
+		#m-menu ul#nav li.current ul li a { /* second level dropdown buttons */
 			width:auto;
 			background-color: #e0e0e0;
 			border-top: 1px solid #efefef;
@@ -601,74 +623,64 @@ ul#nav {
 			padding: 0px 15px 0px 30px;
 			text-transform: capitalize;
 			font-size: 12px;
-			}
-		
-		#m-menu ul#nav li ul li a:hover, #m-menu ul#nav li.current ul li a:hover { /* second level dropdown button hover state */
-			color:#000;
-			}
-		
-						#m-menu ul#nav li ul li ul li a, #m-menu ul#nav li.current ul li ul li a { /* third level dropdown buttons */
-							width:100%;
-							background-color: #00F;
-							border-bottom: 1px solid #06F;
-							line-height:30px;
-							color:#fff;
-							}
-						
-						#m-menu ul#nav li ul li ul li a:hover, #m-menu ul#nav li.current ul li ul li a:hover { /* third level dropdown button hover state */						
-							background-color: red;
-							border-bottom: 1px solid #900;
-							color:#fff;
-							}
-		 
-		#m-menu ul#nav li ul li ul { /* third-and-above-level lists */
-				display:none;
 		}
-		 
-		#m-menu ul#nav li:hover ul li ul, #m-menu ul#nav li:hover ul li ul li ul, #m-menu ul#nav li.sfhover ul li ul, #m-menu #nav li.sfhover ul li ul li ul {
-			display:none;
-			left: 0px;
+		#m-menu ul#nav li ul li a:hover, 
+		#m-menu ul#nav li.current ul li a:hover,
+		#m-menu ul#nav li ul li a:active, 
+		#m-menu ul#nav li.current ul li a:active { /* second level dropdown button hover state */
+			color:#fff;
 		}
-		 
-		#m-menu ul#nav li:hover ul, /*#m-menu ul#nav li ul li:hover ul, #m-menu ul#nav li ul li ul li:hover ul*/ #m-menu ul#nav li.sfhover ul, #m-menu ul#nav li ul li.sfhover ul /*, #m-menu ul#nav li ul li ul li.sfhover ul */{ /* lists nested under hovered list items */
-			display:block;
-		}
-    } /* end media query */
+/* end second level nav items */	
 
+/* hide third level nav items */
+			#m-menu ul#nav li ul li ul { /* third-and-above-level lists */
+				display:none;
+			}
+			#m-menu ul#nav li:hover ul li ul, 
+			#m-menu ul#nav li:hover ul li ul li ul, 
+			#m-menu ul#nav li.sfhover ul li ul, 
+			#m-menu #nav li.sfhover ul li ul li ul {
+				display:none;
+				left: 0px;
+			}
+			
+				#m-menu ul#nav li:hover ul, 
+				/*#m-menu ul#nav li ul li:hover ul, 
+				#m-menu ul#nav li ul li ul li:hover ul,*/ 
+				#m-menu ul#nav li.sfhover ul, 
+				#m-menu ul#nav li ul li.sfhover ul /*, 
+				#m-menu ul#nav li ul li ul li.sfhover ul */{ /* lists nested under hovered list items */
+					display:block;
+				}
+} /* end media query */
 
 /* 10.FOOTER AREA */
 
 /* mirror module for utility nav */
 ul#mirror-menu-module {
 	margin: 0px auto;
-	padding: 0px 0 00px;
+	padding: 0px;
 	clear: both;
 	position: relative; 
 	z-index: 0; 
 	text-align:center;
 	font-weight:normal;
-	font: 12px/50px "Century Gothic", Verdana, Geneva, sans-serif;
-	
-	}
-	ul#mirror-menu-module li {
-	/*	display: inline;  remove and add float if you want the text left justified */
-		float: left;/**/
-		padding: 0 20px 0 10px;
-		list-style: none;
-		text-align: center;
-			}
-	ul#mirror-menu-module a {
-		color:#fff;
-		text-decoration:none; 
-		}
-		ul#mirror-menu-module a:hover {
-			color:#fff;
-			text-decoration: underline;
-			}
-
-div.footerData {
-	text-align: right;
-	line-height: 50px;	
+	font: 12px/50px Verdana, Geneva, sans-serif;
+}
+ul#mirror-menu-module li {
+/*	display: inline;  remove and add float if you want the text left justified */
+	float: left;/**/
+	padding: 0 20px 0 10px;
+	list-style: none;
+	text-align: center;
+}
+ul#mirror-menu-module a {
+	color:#fff;
+	text-decoration:none; 
+}
+ul#mirror-menu-module a:hover {
+	color:#fff;
+	text-decoration: underline;
 }
 @media screen and (max-width: 767px) {
 	div.footerData {
@@ -677,7 +689,6 @@ div.footerData {
 	ul#mirror-menu-module li {
 		display: inline;
 		float: none;
-			
 	}
 }
 
@@ -690,51 +701,48 @@ div#copyright {
 	line-height: 18px;
 	color:#c9c99f;
 	width:95%;
-	
 }
-
 div#copyright br {
 	display:none;
-	}
-
+}
+div#copyright a{
+	color: #c9c99f;
+}
 .ypimg {
   float: right;
   margin: 0px 15px 0px 80px;
 }
-
-.ownerlogin {
-	float:left;
-	clear:right;
-	margin-top:12px;
-	color: #c9c99f;
-	}
 	
 @media only screen and (max-width: 767px){
-	      div#copyright {
-			text-align: center;
-			font-size:10px;	
-		}
-		
-		div#copyright br {
-	   		display:block;
-		}
-		
-		.ypimg {
-		  float: none;
-		  clear:right;
-		  margin: 10px 0px 10px 0px;
-		}
-		
-		.ownerlogin {
-			float: none;
-			clear: none;
-			margin:auto;
-			display:none;
-			}
-     }			
+	div#copyright {
+		text-align: center;
+		font-size:10px;	
+	}
+	div#copyright br {
+		display:block;
+	}
+	.ypimg {
+		float: none;
+		clear:right;
+		margin: 10px 0px 10px 0px;
+	}
+}			
 
 /* 10 b. Form Styling */
-
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+textarea {
+	width: 95%;
+}
+select {
+	width: 100%;	
+}
+@media only screen and (max-width: 767px) {
+	select {
+		width: 98%;	
+	}
+}
 label {}
 input[type="text"] {}
 input[type="text"]:focus {} 
@@ -742,6 +750,7 @@ select {}
 select option {}
 textarea {}
 input[type="submit"] {}
+input[type="reset"] {}
 
 /* ----- Websplanet widget form classes ----- */
 .calculator-btn { /* match input[type=submit] styling */ }
@@ -770,12 +779,7 @@ div.unit-calc li.unit-menu ul.unit-type li a:hover {
 
 /* 11.WEBSPLANET DEFAULT */
 
-
-
-
-
 /* Modules */
-
 .module-wrapper {}
 .module-title {}
 .module-content {}
@@ -783,17 +787,15 @@ div.unit-calc li.unit-menu ul.unit-type li a:hover {
 /* Widgets */
 .widget-element {clear:left !important;}
 /* Column Gutter fix (per request from Zuzana) */
-.widget-wrapper {
-	margin: 10px 15px !important;
-}
+.widget-wrapper {}
 .widget-title {}
 .widget-body {}
+.diy-widget {min-height:25px;}
 
 /* picture+text widget */
 .image_wrapper.free-image-left{
 	margin-right: 5px;
 }
-
 .image_wrapper.free-image-right{
 	margin-left: 5px;
 }
@@ -867,7 +869,7 @@ div.unit-calc li.unit-menu ul.unit-type li a:hover {
     display:inherit;
 }
 .widget-button{
-	width:100%; 
+	width:auto; 
 	height:auto; 
 	text-align:center;  
 	z-index:1001;
@@ -876,13 +878,11 @@ div.unit-calc li.unit-menu ul.unit-type li a:hover {
     border-radius:10px;
 	background-color: #999;
 	line-height: 40px;
-	}
-	
+}	
 div.widget-button:hover{
 	cursor:pointer;
 	background-color:#C60;
-	}
-
+}
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .widget-popup{
     	height: 300px;
@@ -893,19 +893,16 @@ div.widget-button:hover{
     	height: 480px;
     }
 }
-.widget-wrapper{margin:7px;}
-
-
-
+.widget-wrapper{
+	margin:10px 15px !important;
+}
 
 /* back to top */
-
 #back-top {
 	position: fixed;
 	bottom: 30px;
 	right: 10px;
 	z-index: 600;
-	
 }
 #back-top a {
 	width: 42px;
@@ -944,11 +941,9 @@ div.widget-button:hover{
 #back-top a:hover span {
 	background-color: #777;
 }
-
 /* end back to top */
 
 /* forms */
-
 .form-manager li input[type="text"], .contact-us li input[type="text"] {
    width: 98%;
 }
@@ -962,18 +957,11 @@ textarea { resize:vertical; max-height:200px; min-height:75px;	}
 
 /* end forms */
 
-
 /* gallery */ 
-
-
 .es-carousel ul li img {cursor:pointer;}
-
 /* end gallery */
 
-
-
 /* mobile quick nav buttons */
-
 #m-panel {
 	width:100%;
 	position:fixed;
@@ -983,8 +971,7 @@ textarea { resize:vertical; max-height:200px; min-height:75px;	}
 	z-index: 6666;
 	text-align:center;
 	display:none;
-	}
-	
+}
 a.m-click-phone, a.m-click-mail, a.m-click-map {
 	float:left;
 	height:45px;
@@ -995,18 +982,23 @@ a.m-click-phone, a.m-click-mail, a.m-click-map {
 	padding: 0px 0px;
 	text-align:center;
 	/* this is the background of quick nav. please do not add left and right borders. They will mess up the widths of the buttons and will not display correctly. */
-	background: -moz-linear-gradient( 		top, 		#a3a3a3 0%, 		#3b3b3b 50%, 		#242424 50%, 		#000000);
-	background: -webkit-gradient( 		linear, left top, left bottom, 		from(#a3a3a3), 		color-stop(0.50, #3b3b3b), 		color-stop(0.50, #242424), 		to(#000000));
-	-moz-box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-	-webkit-box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-	box-shadow: 		0px 1px 3px rgba(000,000,000,0.5), 		inset 0px 0px 1px rgba(255,255,255,0.6);
-
-	}
-	
-a.m-click-phone, a.m-click-mail, a.m-click-map {width:33%;}
-a.m-click-mail {width:34%;}
-	
-a.m-click-phone span, a.m-click-mail span, a.m-click-map span {
+	background: -moz-linear-gradient( top, #a3a3a3 0%, #3b3b3b 50%, #242424 50%, #000000);
+	background: -webkit-gradient( linear, left top, left bottom, from(#a3a3a3), color-stop(0.50, #3b3b3b), color-stop(0.50, #242424), to(#000000));
+	-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+	-webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+	box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+}
+a.m-click-phone, 
+a.m-click-mail, 
+a.m-click-map {
+	width:33%;
+}
+a.m-click-mail {
+	width:34%;
+}	
+a.m-click-phone span, 
+a.m-click-mail span, 
+a.m-click-map span {
 	height:45px;
 	width:100%;
 	overflow:hidden;
@@ -1018,59 +1010,39 @@ a.m-click-phone span, a.m-click-mail span, a.m-click-map span {
 	padding:0px;
 	text-indent:-9950px;
 	}	
-	
 a.m-click-phone span { 
-background-position:center center;
-	}
-
+	background-position:center center;
+}
 a.m-click-mail span{
 	background-position:bottom center;
-	}
-
+}
 a.m-click-map span{
 	background-position:top center;
+}
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and(max-width: 767px) {	
+	#m-panel {
+		display:block;
 	}
-	
-
-
- /* Smaller than standard 960 (devices and browsers) */
-    @media only screen and (max-width: 959px) {}
-
-    /* Tablet Portrait size to standard 960 (devices and browsers) */
-    @media only screen and (min-width: 768px) and (max-width: 959px) {}
-
-    /* All Mobile Sizes (devices and browser) */
-    @media only screen and (max-width: 767px) {
-			
-		}
-
-    /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-    @media only screen and (min-width: 480px) and (max-width: 767px) {	
-	#m-panel {display:block}
-	#copyright {padding-bottom:45px;}
-		}
-
-    /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-    @media only screen and (max-width: 479px) { 
-	     #m-panel {display:block}
-		 #copyright {padding-bottom:45px;}
-		}	
+	#copyright {
+		padding-bottom:45px;
+	}
+}
 /* end mobile quick nav buttons */
 
+/* 
+   -------------------------------------------------------
+   --------------- Websplanet widget fixes --------------- 
+   -------------------------------------------------------
+*/
 
-
-
-
-/* --------------- Websplanet widget fixes --------------- */
 /* Websplanet mobile fixes */
 form ul {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
 }
-nav#menu ul li a.hover {
-	
-}
+nav#menu ul li a.hover { }
 /* footer data link */
 a.websplanet {
 	color: #fff;
@@ -1083,7 +1055,9 @@ a.websplanet {
 .footerText {
 	display: none; /* these are just empty spans in the footer area, display none lets .addthis_toolbox to be aligned properly */
 }
-.addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
+.addthis_default_style .at300b, 
+.addthis_default_style .at300bo, 
+.addthis_default_style .at300m {
 	margin-top: 4px;
 }
 /* ---------- Start UI styling fixes ---------- */
@@ -1101,37 +1075,27 @@ a.websplanet {
 	font-size: 13px; /*match a, a:visited { styling } */
 	line-height: 16px;
 	margin-bottom: 21px;
-	display: inline-block;
+	display: inline;
 }
-
 /* iframe has height of 0px but makes container div taller than the button */
 iframe#Guesbook_csiframe {
 	display: none;
 }
-/* YP reviews styling */
-div.reviewBody {
-	font-size: 13px;  /* match paragraph styling */
-	line-height: 16px;
-}
-div.reviewMeta,
-div.reviewBody {
-	color: #252525; /* match paragraph styling */
-}
 .reviewSubject h4 {
 	font-size: 20px !important;  /* match h4 styling; requires !important */
 }
-.ypreviews {margin-bottom:30px;}
+.ypreviews {
+	margin-bottom:30px;
+}
 /* RSS widget styling --- rss feed widget styeling, typography is completely different */
 .rss-item-title a {
 	font: 20px; /* match h4 styling */
-	color: #2D71E6; /* match link color */
 }
 div.rss ul {
     padding: 0;
 }
 div[type=rss_widget] > div.widget-body > div { /* match h3 styling; requires !important */
-	font: 28px/28px "Avenir Regular", Helvetica, Arial, sans-serif !important;
-	
+	font: 28px/28px Helvetica, Arial, sans-serif !important;
 }
 div[type=rss_widget] ul { /* remove indent; requires !important */
 	padding-left: 0 !important; 
@@ -1141,12 +1105,13 @@ div[type=rss_widget] ul { /* remove indent; requires !important */
 	font-size: 13px;
 	line-height: 16px;
 }
-
-
+.facebook-like-box iframe {
+    max-width: 100%;
+}
 /* accordion and tabs break grid, this adds a margin to match other "widget-wrapper"s */
 div.diy-f-accordion,
 div.diy-f-tabs {
-	margin: 7px;
+	margin: 10px 15px;
 }
 /* Accordian fixes */
 .diy-f-accordion h3 {
@@ -1156,10 +1121,23 @@ div.diy-f-tabs {
 }
 
 /* ---------- Forms Fixes ----------*/
+.form-manager li input[type="text"], 
+.contact-us li input[type="text"] {
+   width: 98%;
+}
+.form-manager label {
+	line-height: 25px;
+	padding-bottom:0px;
+}
+textarea { 
+	resize:vertical; 
+	max-height:200px; 
+	min-height:75px;
+}
 /* Forms Manager */
 label {
-	    margin-top: 0 !important; /* forms manager sets to 12px */
-	    line-height: 16px !important; /* forms manager sets to 25px */
+	margin-top: 0 !important; /* forms manager sets to 12px */
+	line-height: 16px !important; /* forms manager sets to 25px */
 }
 .form-manager li { /* spaces form feilds better, chunks items together */
 	margin-bottom: 12px !important;
@@ -1193,43 +1171,45 @@ div.calc-input-container {
 div.unit-results ul li input { /* fix width */
 	width: 97%;
 }	
-
 li.calc-param-row label {
   padding: 0 0 5px;
 }
-
-li.calc-param-row, li.calc-instruction-row, li.calc-resault-row 
-  {height:auto !important; margin-bottom:5px;}
-
-li.calc-param-row div.calc-input-container, li.calc-resault-row div.calc-input-container {
+li.calc-param-row, 
+li.calc-instruction-row, 
+li.calc-resault-row {
+	height:auto !important; 
+	margin-bottom:5px;
+}
+li.calc-param-row div.calc-input-container, 
+li.calc-resault-row div.calc-input-container {
   clear: left;
   float: left;
 }
-
-
-.calculator-btn {float:left;}
+.calculator-btn {
+	float:left;
+}
 
 /* weight calculator */
-
-div.calories-calc div.calc-input-container span.small {display:none;}
-
-div.calc-input-container #weight_kg, div.calc-input-container #cen {display:none;}
-
-div.calc-input-container span.or {display:none !important;}
-
+div.calories-calc div.calc-input-container span.small {
+	display:none;
+}
+div.calc-input-container #weight_kg, 
+div.calc-input-container #cen {
+	display:none;
+}
+div.calc-input-container span.or {
+	display:none !important;
+}
 div.calories-calc div.calc-input-container input[type="radio"] {
   border: 0px solid #AACFE4;
-
 }
 
 /* conversion calculator */
-
 div.unit-calc li.unit-menu ul.unit-type {
   display: inline-block;
   text-align: center;
   width: 100%;
 }
-
 div.unit-calc li.unit-menu ul.unit-type li {
   clear: none !important;
   display: block;
@@ -1238,7 +1218,6 @@ div.unit-calc li.unit-menu ul.unit-type li {
   font-size: 10px;
   width:auto !important;
 }
-
 div.unit-calc li.unit-menu ul.unit-type li a {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
@@ -1266,12 +1245,13 @@ div.unit-calc li.unit-menu ul.unit-type li a {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 } 
 
-div.unit-calc li.unit-menu ul.unit-type li a.active, div.unit-calc li.unit-menu ul.unit-type li a:hover {
-	 background-image: linear-gradient(#d7d7d7, #d7d7d7 25%, #c7c7c7 );
-	 color:#000;
-	 text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.75);
-     text-decoration:none;
-	}
+div.unit-calc li.unit-menu ul.unit-type li a.active,
+div.unit-calc li.unit-menu ul.unit-type li a:hover {
+	background-image: linear-gradient(#d7d7d7, #d7d7d7 25%, #c7c7c7 );
+	color:#000;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.75);
+    text-decoration:none;
+}
 
 /* results */
  li.calc-resault-row label {
@@ -1284,7 +1264,9 @@ div.unit-calc li.unit-menu ul.unit-type li a.active, div.unit-calc li.unit-menu 
   font-size: 30px !important;
 }
 /* Payment Method Fixes */
-ul.PaymentMethod_widget  label {display:none;}
+ul.PaymentMethod_widget  label {
+	display:none;
+}
 .PaymentMethod_widget .checkboxPaymentMethod span {
 	height: 40px;
 	width: 62px;
@@ -1301,7 +1283,6 @@ li.checkboxPaymentMethod {
 }
 
 /* --------------- end Websplanet widget fixes --------------- */
-
 div.horizontal div.vertical {
     float: left;
 }
@@ -1313,15 +1294,20 @@ div.horizontal div.vertical {
 	}
 }
 
-.flR {
-	float:right;
-	margin-left: 10px;
+/* column percentage display in DIY tool */
+.diy-percent-width {
+width: auto !important;
+top: 8px !important;
+right: 0px !important;
+display: block !important;
+font-size: 11px !important;
+line-height: 16px !important;
+border-radius: 4px !important;
+font-weight: bold !important;
+text-align: center !important;
+color: #fff !important;
+height: 16px !important;
 }
-.flL {
-	margin-right: 10px;
-	float:left;
-}
-
 
 /* --------------- begin Websplanet module fixes --------------- */
 
@@ -1344,7 +1330,7 @@ div.Events_item {
 #FAQ_category_list li a:visited {
     background-color: red; /* replace with theme color */
     border-radius: 10px 10px 10px 10px;
-    font-family: "Century Gothic",Verdana,arial,sans-serif; /* replace with theme fonts */
+    font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
     font-size: 21px;
     height: auto;
     line-height: 40px;
@@ -1373,37 +1359,14 @@ div#jobs-module ul {
     margin: 0;
     padding: 0;
 }
-
-/* for sites with dark backgrounds, the job desciption text gets lost as it is inline styled to be a dark color by default  */
-div.jobs-desc {
-     /*
-	background-color: #fff;
-	background-color: rgba(255,255,255, .75);
-	*/
-	}
-	
-ul#FAQ_category_list span p {
-	/* padding: 10px;
-	background-color: #fff;
-	background-color: rgba(255,255,255, .75);
-	*/
-	}
-	
-ul#FAQ_category_list span p span {
-	/* margin: 0; */
-	}
-	
-/* end dark background module fixes */ 
-
-
 .jobs-title,
 .jobs-title:hover {
     background: none;
     border: none;
-        font-family: "Century Gothic",Verdana,arial,sans-serif; /* replace with theme fonts */
-        font-size: 24px;
-        padding-left: 0px;
-        color: #E40A0A; /* replace with theme color */
+	font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
+	font-size: 24px;
+	padding-left: 0px;
+	color: #E40A0A; /* replace with theme color */
 }
 .jobs-title a:hover,
 .jobs-title a:focus,
@@ -1435,7 +1398,6 @@ ul#FAQ_category_list span p span {
 
 /* --------------- end Websplanet module fixes --------------- */
 
-
 /* --------------- Default Site Callout Classes --------------- */
 div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
 div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
@@ -1443,7 +1405,6 @@ div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inne
 	float:left !important;
 	margin-right: 0 !important;
 }	
-	 
 @media screen and (max-width: 767px) {
 	div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
 	div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
