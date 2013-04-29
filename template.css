@@ -15,7 +15,7 @@ header, footer, nav, section, article {display: block;}
 img#coverBGimg { 
 	position: fixed !important; 
 	top: 0; 
-	left: 50%; 
+	left: 50%; /* Set to 0 if using IEcoverBG.js rather than IEcoverBG-centered.js */
 	z-index: -10;
 }
 .bgwidth { 

@@ -16,11 +16,16 @@
 
 <script src="gfx/jquery.scroll-follow.js"></script>
 <script src="gfx/jquery.easing.1.3"></script>
- 
+
+
 <!-- script for scroll to top, IE drop down menu fix, and mobile quick nav link script -->
 <script type="text/javascript" src="gfx/yp-scripts.js"></script>
 <!-- IE cover background compatibility -->
-<script type="text/javascript" src="gfx/coverBG.js"></script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="gfx/IEcoverBG-centered.js">
+        /* NOTE: Replace with IEcoverBG.js if no centering is required */
+    </script>
+<![endif]-->
 <!-- mobile navigation script -->
 <script>
 $(document).ready(function(){
