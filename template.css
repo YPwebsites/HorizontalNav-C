@@ -38,7 +38,7 @@ body {
 	position: relative;
 	z-index: -15;
 }		
-.skinBg { 
+div.skinBg { 
 	position: relative;
 	z-index: -9;
 	z-index: 0\9;
@@ -537,7 +537,7 @@ ul#nav {
 @media only screen and (max-width: 767px) {
 	/* hide desktop elements in "mobile" view */ 
 	#menu { display:none; }
-	#wrapper-menu {display:none;}
+	#wrapper-menu {display:none; line-height: 0;}
 	
 	a#navTab /* mobile menu open button */{
 		display:block;
@@ -566,6 +566,7 @@ ul#nav {
 		-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
 		-webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
 		box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+		background-color: #3b3b3b\9;
 	}	
 	#m-menu {
 		height: auto;
@@ -776,6 +777,10 @@ select option {}
 textarea {}
 input[type="submit"] {}
 input[type="reset"] {}
+.astrix, .required:after {
+	/* *********** THEME COLOR *********** */
+	color: red;
+}
 
 /* ----- Websplanet widget form classes ----- */
 .calculator-btn { /* match input[type=submit] styling */ }
@@ -917,6 +922,7 @@ div.widget-button:hover,
 .jobs-apply a:focus {
 	cursor:pointer;
 	background-color:#C60;
+	filter: none;
 }
 
 
@@ -1403,12 +1409,12 @@ div.Events_item {
 div.Events_item_desc {
 	clear: both;
 }
-
+/*
 #FAQ_category_list > li > a,
 #FAQ_category_list > li > a:visited {
-    background-color: red; /* replace with theme color */
+    background-color: red; /* replace with theme color 
     border-radius: 10px 10px 10px 10px;
-    font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
+    font-family: Verdana,arial,sans-serif; /* replace with theme fonts 
     font-size: 21px;
     height: auto;
     line-height: 40px;
@@ -1424,9 +1430,9 @@ div.Events_item_desc {
 	cursor:pointer;
 	box-shadow: 0 0 10px #000000 inset;
 	-webkit-box-shadow: 0 0 10px #000000 inset;
-	background: red; /* replace with theme color */
+	background: red; /* replace with theme color 
     filter: progid:DXImageTransform.Microsoft.gradient( enabled=false );
-}
+}*/
 ul#FAQ_category_list span {
 	margin: 0 12px 24px;
 }
@@ -1444,32 +1450,48 @@ div#jobs-module ul {
 	font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
 	font-size: 24px;
 	padding-left: 0px;
-	color: #E40A0A; /* replace with theme color */
+	color: #E40A0A; /* ********** replace with theme color ********** */
 }
 .jobs-title a:hover,
 .jobs-title a:focus,
 .jobs-title a:active {
 	text-decoration: underline;
 }
-
+#jobs-module li .jobs-title a {
+	color:	#E40A0A; /* ********** replace with theme color ********** */
+}
 
 /* --------------- end Websplanet module fixes --------------- */
 
 /* --------------- Default Site Callout Classes --------------- */
-div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
-div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
 	width:45% !important;
 	float:left !important;
 	margin-right: 0 !important;
-}	
-div.horizontal.callouts div.vertical div.diy-f-spot.callout p.figcaption {
+}
+div.diy-f-spot.callout1 p.figcaption,
+div.diy-f-spot.callout2 p.figcaption {
 	display: none;	
 }
+div.diy-f-spot.callout1 div.image_wrapper,
+div.diy-f-spot.callout2 div.image_wrapper {
+	/* ********** add strokes and other styles here and not on <img> ********** */
+	line-height: 0;	
+}
 @media screen and (max-width: 767px) {
-	div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
-	div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+	div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+	div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
 		width:auto !important;
 		float:left !important;
 		margin-right: 15px !important;
+		margin-bottom: 0 !important;
+	}
+}
+@media screen and (max-width: 479px) {
+	div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+	div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+		float: none: !important;
+		width: 100% !important;	
 	}
 }
