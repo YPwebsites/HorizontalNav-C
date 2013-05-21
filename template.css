@@ -537,7 +537,7 @@ ul#nav {
 @media only screen and (max-width: 767px) {
 	/* hide desktop elements in "mobile" view */ 
 	#menu { display:none; }
-	#wrapper-menu {display:none; line-height: 0;}
+	#wrapper-menu {display:none;}
 	
 	a#navTab /* mobile menu open button */{
 		display:block;
@@ -577,6 +577,7 @@ ul#nav {
 		z-index: 800;
 		display: block;
 		margin:0 auto;
+		line-height: 0;
 	}	
 	#m-menu-content {
 		display: none; /* hides the menu */
